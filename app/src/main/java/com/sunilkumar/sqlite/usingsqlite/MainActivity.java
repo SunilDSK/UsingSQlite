@@ -14,9 +14,9 @@ public class MainActivity extends AppCompatActivity {
     EditText name,age,cgpa;
     Button insert,read;
 
-    String stu_name;
-    int stu_age;
-    float stu_cgpa;
+    String stu_name,stu_age,stu_cgpa;
+    int st_age;
+    float st_cgpa;
 
     //Create instance of DatabaseHandler
     DatabaseHandler dbHandler;
@@ -39,10 +39,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 stu_name = name.getText().toString().trim();
-                stu_age = Integer.parseInt(age.getText().toString().trim());
-                stu_cgpa = Float.parseFloat(cgpa.getText().toString().trim());
-                if(!TextUtils.isEmpty(stu_name) || !(stu_age > 0) || !(stu_cgpa > 0)){
-                    Student student = new Student(stu_name,stu_age,stu_cgpa);
+                stu_age = age.getText().toString().trim();
+                stu_cgpa = cgpa.getText().toString().trim();
+                if(!TextUtils.isEmpty(stu_name) && !TextUtils.isEmpty(stu_age) && !TextUtils.isEmpty(stu_cgpa)){
+                    st_age = Integer.parseInt(stu_age);
+                    st_cgpa = Float.parseFloat(stu_cgpa);
+                    Student student = new Student(stu_name,st_age,st_cgpa);
                     //invoke insert method to insert data
                     dbHandler.addStudent(student);
                 }else
