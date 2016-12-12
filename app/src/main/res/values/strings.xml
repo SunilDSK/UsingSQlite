@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">UsingSQlite</string>
+    <string name="info">Please enter the following information and insert.</string>
+    <string name="name">Name</string>
+    <string name="age">Age</string>
+    <string name="cgpe">CGPA</string>
+    <string name="insert">Insert</string>
+    <string name="read">Read</string>
+</resources>
